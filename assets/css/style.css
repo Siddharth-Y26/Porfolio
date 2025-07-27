@@ -1,0 +1,915 @@
+/* --- Global Resets & Body --- */
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+/* Consider a body font like Roboto or Open Sans for better readability on dark themes if not already using one globally */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap'); */
+
+body {
+    background-color: #1A202C; /* Very dark background */
+    color: #E2E8F0; /* Light grey text for readability */
+    font-size: 18px;
+    font-family: sans-serif; /* Default to a clean sans-serif */
+}
+
+a {
+    color: #B19CD9; /* Accent color for links */
+}
+
+blockquote {
+    border-left: 5px solid #B19CD9; /* Accent color for blockquote border */
+    color: #CBD5E0; /* Slightly darker light grey for blockquote text */
+    font-size: 125%;
+    font-weight: 400;
+    margin: 20px 0;
+    padding-left: 1.5rem;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Navigation --- */
+nav {
+    background: #1A202C; /* Dark background for top nav */
+    box-shadow: none;
+    height: 0;
+}
+
+nav i {
+    padding: 0 15px;
+    position: relative;
+    top: 5px;
+    color: #E2E8F0; /* Light icons */
+}
+
+main {
+    background: #1A202C; /* Main dark background */
+    padding-left: 190px;
+}
+
+dl {
+    margin-top: 0.5rem;
+}
+
+dd {
+    display: inline-block;
+    font-weight: 500;
+    margin-left: 0;
+}
+
+dt {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+ul.side-nav {
+    width: 190px;
+    background-color: #2D3748; /* Slightly lighter dark for sidebar background */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3); /* Darker shadow for sidebar */
+}
+
+ul.side-nav li {
+    padding: 0;
+}
+
+ul.side-nav.fixed a {
+    box-sizing: content-box;
+    color: #E2E8F0; /* Light text for sidebar links */
+    display: block;
+    line-height: 100%;
+    padding: 10px 0 12px;
+}
+
+ul.table-of-contents li.logo a.active,
+ul.table-of-contents li.logo a:hover {
+    border: none;
+    font-weight: 200;
+}
+
+ul.side-nav.fixed li.logo {
+    background-color: #2D3748; /* Darker background for logo area */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle light border */
+    box-sizing: content-box;
+    min-height: 90px;
+    padding: 30px 30px 40px;
+}
+
+ul.side-nav.fixed li.logo a {
+    font-weight: 200;
+    line-height: 100%;
+    color: #E2E8F0; /* Light text for name in sidebar */
+}
+
+ul.table-of-contents li:not(.logo) a.active,
+ul.table-of-contents li:not(.logo) a:hover {
+    background-color: #3C4A5A; /* Darker hover/active background */
+    border-left: 3px solid #B19CD9; /* Accent color for active border */
+}
+
+ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
+ul#slide-out li:not(.logo) a span {
+    color: #E2E8F0 !important; /* Consistent light text color */
+}
+
+li.logo span {
+    display: block;
+    font-size: 14px;
+    color: #CBD5E0; /* Slightly darker light text for title */
+}
+
+.brand-logo h1 {
+    font-size: inherit;
+    line-height: inherit;
+    margin: inherit;
+    font-weight: inherit;
+}
+
+/* --- General Layout --- */
+.container {
+    width: 95%;
+}
+
+h3 {
+    font-weight: 200;
+    margin-bottom: 60px;
+    margin-top: 0;
+    padding: 30px 40px;
+    text-transform: uppercase;
+    background-color: #B19CD9; /* Accent background for section titles */
+    color: white; /* White text for section titles */
+    border-bottom-left-radius: 10px; /* Rounded corners for section titles */
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Darker shadow */
+}
+
+.section {
+    padding-bottom: 30px;
+    padding-top: 0;
+    position: relative;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+/* --- Intro Section (Hero) --- */
+#intro.section {
+    background: linear-gradient(135deg, #2D3748, #1A202C); /* Dark gradient background */
+    position: relative;
+}
+
+#intro.section .container {
+    color: white;
+    font-weight: 200;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#intro.section .container *:not(span) {
+    font-weight: 300;
+    line-height: 150%;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Clearer shadow on dark */
+}
+
+/* ADJUSTED: Intro section content alignment */
+#intro .content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#intro.section .underline {
+    border-bottom: 5px solid #B19CD9; /* Accent color underline */
+}
+
+#intro.section .teal {
+    padding: 0 10px;
+    background-color: transparent; /* No background, let gradient show */
+    color: #B19CD9; /* Accent color for the typing text */
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* --- Profile Picture (Sidebar) --- */
+.profile-pic {
+    position: relative;
+    max-width: 130px;
+    max-height: 130px;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: -31px;
+    margin-left: -7px;
+    border: 6px solid #B19CD9; /* Accent color border for profile pic */
+    border-radius: 50% !important;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ADJUSTED: Social Icons in Intro Section */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+.icon-btn i {
+    line-height: 1;
+}
+
+.github {
+    background-color: #4A5568; /* Dark grey for GitHub */
+    color: white;
+}
+
+.linkedin {
+    background-color: #0077b5; /* LinkedIn's original blue */
+    color: white;
+}
+
+.icon-btn:hover {
+    transform: scale(1.10);
+    color: #FFFFFF;
+}
+
+.linkedin:hover {
+    background-color: #00568f;
+}
+
+.github:hover {
+    background-color: black;
+}
+
+/* --- Buttons - Read Me, Contact Us --- */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1.5em;
+}
+
+.readme,
+.contactme {
+    padding: 11px 35px;
+    border: 2px solid #B19CD9; /* Accent color border */
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+.readme {
+    background: #B19CD9; /* Accent background */
+    color: white;
+}
+
+.readme:hover {
+    color: #B19CD9;
+    background-color: transparent;
+    border-color: #B19CD9;
+}
+
+.contactme {
+    background: transparent;
+    color: #B19CD9; /* Accent color text */
+}
+
+.contactme:hover {
+    color: white;
+    background-color: #B19CD9;
+    border-color: #B19CD9;
+}
+
+/* --- Materialize Specifics & Card Styles --- */
+.waves-effect.waves-blue .waves-ripple {
+    background-color: rgba(177, 156, 217, 0.4); /* Accent color for waves */
+}
+
+.card {
+    margin-bottom: 60px;
+    border-radius: 12px;
+    background-color: #2D3748; /* Darker card background */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Pronounced dark shadow */
+    overflow: hidden;
+}
+
+.card .role {
+    font-size: 1.25rem;
+    position: absolute;
+    right: 38px;
+    top: 35px;
+    color: #B19CD9; /* Accent color for role */
+}
+
+.card li a {
+    margin-right: 0;
+    color: #B19CD9; /* Accent color for card links */
+    border-bottom: 2px solid #8A6BBF; /* Darker accent for link underline */
+}
+
+.card li a:hover {
+    color: #E2E8F0; /* Light text on hover */
+    font-weight: 500;
+}
+
+.card .card-content {
+    padding-bottom: 30px;
+    color: #E2E8F0; /* Light text for card content */
+}
+
+.card .card-content p {
+    padding: 5px 0 0;
+}
+
+.card h5 {
+    font-size: 1.5rem;
+    margin-bottom: -0.5rem;
+    margin-top: 2rem;
+    color: #E2E8F0; /* Light text for card headings */
+}
+
+.card h6 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    color: #A0AEC0; /* Slightly muted light text */
+}
+
+#experience .card-action {
+    background-color: #2D3748; /* Match card background for action area */
+    border: none;
+}
+
+#experience .card .col.s12.m2 a {
+    display: block;
+}
+
+#experience .card .col.s12.m2 a img {
+    max-height: 60px;
+}
+
+.card-action span {
+    font-size: 85%;
+    color: #A0AEC0; /* Muted light text */
+}
+
+.card ul {
+    margin-bottom: 0;
+}
+
+.card ul li {
+    line-height: 200%;
+    list-style-type: disc;
+    margin-left: 24px;
+    color: #E2E8F0; /* Light text for list items */
+}
+
+.card ul li li {
+    color: #CBD5E0; /* Slightly darker light text for nested list */
+    font-size: 13px;
+}
+
+.card .card-title {
+    font-size: 24px;
+}
+
+.card .card-content .card-title {
+    line-height: 2.5rem;
+}
+
+.card i.right {
+    margin-left: 10px;
+    color: #E2E8F0; /* Light icon for card expand */
+}
+
+a.hoverline {
+    border-bottom: 3px solid transparent !important;
+    padding: 3px 3px 0 3px;
+    transition: 0.25s all;
+    -moz-transition: 0.25s all;
+    -webkit-transition: 0.25s all;
+}
+
+a.hoverline:hover {
+    border-bottom: 3px solid #B19CD9 !important; /* Accent color on hover */
+}
+
+#skills .card.large {
+    height: 360px;
+}
+
+#skills h4 {
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle light border */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    color: #B19CD9; /* Accent color for skill headings */
+}
+
+#skills .col img.responsive-img {
+    margin: 0 auto;
+    max-height: 100px;
+    padding-bottom: 10px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#skills .col {
+    color: #E2E8F0; /* Light text for skill names */
+}
+
+.card.large .card-content p {
+    color: inherit;
+    margin: 0;
+    padding: 30px 0;
+}
+
+#experience .card-content .row {
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle light border */
+    padding-bottom: 10px;
+}
+
+.card.large .card-image {
+    height: 230px;
+}
+
+.card.large .card-content {
+    height: auto;
+}
+
+.card.medium .card-image {
+    height: 240px;
+}
+
+.card-action a.btn-floating {
+    margin-bottom: 0;
+}
+
+#contact a:not(.btn-floating) {
+    bottom: 6px;
+    left: 20px;
+    position: relative;
+    color: #E2E8F0; /* Light text for contact links */
+}
+
+#contact a.hoverline:hover {
+    border-bottom: 3px solid #B19CD9 !important; /* Accent color for contact link hover */
+}
+
+#contact a.btn-floating {
+    background-color: #B19CD9; /* Accent color for contact buttons */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+#contact a.btn-floating:hover {
+    background-color: #8A6BBF; /* Darker accent on hover */
+}
+
+#experience .col.s12.m2 {
+    text-align: center;
+}
+
+.fa-external-link:before {
+    left: 3px;
+    position: relative;
+    top: 2px;
+}
+
+small {
+    display: none;
+}
+
+.grey-text {
+    color: #CBD5E0 !important; /* Adjusted for dark theme */
+}
+
+.teal-text {
+    color: #B19CD9 !important; /* Changed to new accent color */
+}
+
+.teal {
+    background-color: #B19CD9 !important; /* Changed to new accent color */
+}
+
+/* --- Specific Project Card Reveal Button Fixes --- */
+.card .card-reveal {
+    position: relative;
+    overflow-y: auto;
+    padding-bottom: 70px;
+    background-color: #2D3748; /* Darker background for reveal area */
+    border-radius: 12px;
+    color: #E2E8F0; /* Light text in reveal area */
+}
+
+.card .card-reveal .card-action {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px 24px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: #2D3748; /* Match card-reveal background */
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle light border */
+}
+
+.card .card-action .btn-floating {
+    margin: 0;
+    background-color: #B19CD9; /* Accent color for project buttons */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+.card .card-action .btn-floating:hover {
+    background-color: #8A6BBF; /* Darker accent on hover */
+}
+
+.card.medium .card-reveal {
+    max-height: calc(100% - 56px);
+}
+
+
+/* --- Media Queries --- */
+@media (min-width: 1200px) {
+    #experience .container {
+        width: 860px;
+    }
+}
+
+@media (max-width: 1360px) {
+    .card ul li {
+        font-size: 14px;
+        line-height: 200%;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 1160px) {
+    .card ul li {
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        padding-left: 0px;
+        padding-top: 64px;
+    }
+
+    ul.side-nav a {
+        line-height: 100%;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav {
+        background: #1A202C; /* Dark for mobile top nav */
+        height: 64px;
+        position: absolute;
+    }
+
+    nav a.button-collapse,
+    nav a.button-collapse i {
+        color: #B19CD9; /* Accent color for mobile nav icon */
+        height: 56px;
+        line-height: 56px;
+    }
+
+    h3 {
+        padding: 20px 30px;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    nav.hide-on-large.only.trigger {
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        background-color: #1A202C; /* Dark background for mobile fixed nav */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+    }
+
+    .name-title {
+        display: block;
+        height: 100%;
+        padding-top: 15px;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+    }
+
+    .name-title>span,
+    .name-title>a {
+        position: relative;
+        line-height: 20px;
+    }
+
+    .name-title a {
+        font-size: 22px;
+        display: block;
+        color: #B19CD9; /* Accent color for name */
+    }
+
+    .name-title span {
+        display: block;
+        font-size: 14px;
+        color: #CBD5E0; /* Muted light text for title */
+    }
+
+    h3,
+    .container {
+        position: relative;
+        top: 64px;
+    }
+
+    section#intro {
+        margin-bottom: -64px;
+    }
+
+    .card .role {
+        position: relative;
+        right: initial;
+        top: initial;
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 22px;
+        line-height: 200%;
+        margin: 30px 0 0;
+        color: white; /* Ensure headings are white */
+    }
+
+    #intro.section .container *:not(span) {
+        padding: 0;
+    }
+
+    .card .card-content .card-title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    #experience span.card-title {
+        text-align: center;
+        display: block;
+    }
+
+    #experience span.card-title a {
+        margin: 0;
+    }
+
+    i.mdi-navigation-close.right {
+        position: relative;
+        bottom: 15px;
+    }
+
+    #contact a:not(.btn-floating) {
+        text-align: center;
+        display: block;
+        left: initial;
+        bottom: initial;
+    }
+
+    #contact a.btn-floating.btn-large {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #intro.section {
+        background-position-x: 30%;
+    }
+}
+/* --- Fixes for Card Reveal initial state and button scrolling (FINAL ATTEMPT with Flexbox for sticky footer) --- */
+
+/* Ensure the card itself correctly contains the reveal layer */
+.card {
+    position: relative !important; /* Force relative positioning for absolute children */
+    overflow: hidden !important;   /* Force hidden overflow to clip reveal content */
+    border-radius: 12px !important; /* Force rounding */
+    /* Ensure a solid background to prevent behind-text showing through */
+    background-color: #2D3748 !important; /* Your dark theme card background */
+}
+
+/* Base style for the card-reveal - crucial for its initial hidden state and active state */
+.card .card-reveal {
+    background-color: #2D3748 !important; /* Force opaque dark background to cover everything */
+    color: #E2E8F0 !important; /* Force light text color */
+    border-radius: 12px !important; /* Match the main card's rounding */
+    
+    /* Absolute positioning to cover the card */
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;         /* Make it fill the card */
+    
+    /* Use flexbox for content and action button layout */
+    display: flex !important;
+    flex-direction: column !important; /* Stack children vertically */
+    
+    /* Initial hidden state (slides down) */
+    transform: translateY(100%) !important; 
+    opacity: 0 !important;          /* Force initially transparent */
+    visibility: hidden !important;  /* Force initially not interactable */
+    
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out !important; /* Force smooth animations */
+    
+    /* Z-index: make sure it's clearly above the card-content */
+    z-index: 2 !important; /* Force higher z-index to ensure it covers original content */
+}
+
+/* When the 'active' class is added by JavaScript, bring it into view */
+.card .card-reveal.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;          /* Fully visible */
+    visibility: visible !important; /* Interactable */
+}
+
+/* Style for the close button within the reveal */
+.card-reveal .mdi-navigation-close {
+    cursor: pointer !important;
+    color: #B19CD9 !important; /* Your accent color for the close icon */
+    position: absolute !important; /* Position relative to .card-reveal */
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 24px !important; /* Adjust icon size */
+    z-index: 20 !important; /* Force it on top of everything within the reveal and action buttons */
+}
+
+/* Style for the title within the reveal */
+.card .card-reveal .card-title {
+    line-height: 2.5rem !important; /* Ensure title in reveal is spaced */
+    color: #B19CD9 !important; /* Force your accent color */
+    padding-right: 40px !important; /* Make space for close button */
+    flex-shrink: 0 !important; /* Prevent title from shrinking when content grows */
+}
+
+/* Style for the scrollable content area within card-reveal */
+.card .card-reveal ul {
+    flex-grow: 1 !important; /* Allow this list to take all available vertical space */
+    overflow-y: auto !important; /* Enable internal scrolling for the content */
+    overflow-x: hidden !important; /* Prevent horizontal scroll */
+    padding-left: 24px !important; /* Standard list indentation */
+    list-style-type: disc !important; /* Ensure bullets are visible */
+    margin-bottom: 0 !important; /* Remove default margin to let flexbox control space */
+    padding-right: 10px !important; /* Add padding-right to account for potential scrollbar width */
+    /* Ensure content is laid out correctly */
+    display: block !important;
+}
+
+.card .card-reveal ul li {
+    line-height: 1.6em !important; /* Adjust line height for readability in lists */
+    color: #E2E8F0 !important; /* Your light text color */
+}
+
+/* Style for the action buttons container within the reveal - this will stay fixed at bottom */
+.card .card-reveal .card-action {
+    background-color: #2D3748 !important; /* Force opaque dark background */
+    border-top: 1px solid rgba(255,255,255,0.1) !important; /* Force subtle separator */
+    box-sizing: border-box !important;
+    padding: 15px 24px !important;
+    
+    /* Using flexbox to push to bottom and ensuring it doesn't scroll with content */
+    flex-shrink: 0 !important; /* Prevent it from shrinking */
+    display: flex !important;
+    justify-content: flex-end !important; /* Align buttons to the right */
+    gap: 10px !important;          /* Space between buttons */
+    
+    position: relative !important; /* This is essential for margin-top: auto to work */
+    margin-top: auto !important; /* Pushes element to the bottom of the flex container */
+    
+    width: 100% !important; /* Ensure it spans full width */
+    left: 0 !important; /* Reset left if it was influenced by absolute/sticky */
+    bottom: 0 !important; /* Reset bottom */
+
+    z-index: 10 !important; /* Force it clearly above scrolling content within card-reveal */
+}
+
+
+/* Style for the actual floating action buttons within card-action */
+.card-action .btn-floating {
+    margin: 0 !important; /* Remove default margins if any */
+    background-color: #B19CD9 !important; /* Your accent color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;
+}
+
+.card-action .btn-floating:hover {
+    background-color: #8A6BBF !important; /* Darker accent on hover */
+}
+
+/* --- Other General Adjustments (from previous attempts to ensure consistency) --- */
+
+/* Fix for intro name span style if it had inline styles */
+#intro.section .caption h2 .teal {
+    background-color: transparent !important;
+    color: #B19CD9 !important; /* Consistent accent color from your theme */
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Skills Section image alignment fix */
+#skills .col {
+    float: left !important; /* Keep Materialize grid float behavior */
+    display: block !important; /* Ensure it's a block element for centering */
+    text-align: center !important; /* Center text and images in the column */
+    color: #E2E8F0 !important; /* Light text for skill names */
+    padding-top: 10px !important; /* Add some padding above text */
+    padding-bottom: 10px !important; /* Add some padding below text */
+}
+
+#skills .col img.responsive-img {
+    margin: 0 auto !important; /* Center images within their columns */
+    display: block !important; /* Make it a block for margin:auto to work */
+    max-height: 100px !important;
+    width: auto !important;
+    object-fit: contain !important; /* Prevent distortion for varying image aspect ratios */
+    height: 60px !important; /* Set a consistent height for all skill icons */
+    width: 60px !important; /* Set a consistent width for all skill icons (or leave auto if object-fit is contain) */
+    padding-bottom: 10px !important;
+}
+
+#skills .row br {
+    display: none !important; /* Hide any <br> tags in your HTML which interfere with grid layout */
+}
+
+/* Restore Materialize defaults if they were overridden elsewhere and causing issues */
+.container {
+    width: 95% !important; /* Default Materialize container width for larger screens */
+    margin: 0 auto !important;
+    max-width: 1200px !important; /* Cap maximum width for large screens */
+}
+
+/* Ensure global colors are properly set if not already in main CSS */
+body {
+    background-color: #1A202C !important; /* Very dark background */
+    color: #E2E8F0 !important; /* Light grey text for readability */
+}
+
+/* Ensure the main 'teal' classes for colors and backgrounds respect the theme */
+.teal {
+    background-color: #B19CD9 !important; /* Force your accent color for elements with .teal class */
+}
+.teal-text {
+    color: #B19CD9 !important; /* Force your accent color for text with .teal-text class */
+}
+.grey-text {
+    color: #CBD5E0 !important; /* Force your muted light grey for text with .grey-text class */
+}
